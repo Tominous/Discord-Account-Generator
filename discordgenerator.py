@@ -33,14 +33,14 @@ lock = threading.Lock()
 def password_gen(length=8, chars= string.ascii_letters + string.digits + string.punctuation):
         return ''.join(random.choice(chars) for _ in range(length))  
 
-# def minute_timer():
-#     while True:
-#         elapsed = time.strftime('%H:%M:%S', time.gmtime(time.time() - start))
-#         os.system(f'title Discord Generator ^| Rate Limit Timer ^| Time Elapsed {elapsed}')
-#         time.sleep(0.05)
-#         if elapsed == '00:01:00':
-#             print(f"{Fore.LIGHTMAGENTA_EX}[!]{Style.RESET_ALL} Timer finished.")
-#             break
+ def minute_timer():
+     while True:
+         elapsed = time.strftime('%H:%M:%S', time.gmtime(time.time() - start))
+         os.system(f'title Discord Generator ^| Rate Limit Timer ^| Time Elapsed {elapsed}')
+         time.sleep(0.05)
+         if elapsed == '00:01:00':
+             print(f"{Fore.LIGHTMAGENTA_EX}[!]{Style.RESET_ALL} Timer finished.")
+             break
 
 def gather_proxy():
         proxies = []
@@ -150,7 +150,7 @@ class DiscordGen:
                 free_print(f"{Fore.LIGHTMAGENTA_EX}[*]{Style.RESET_ALL} Could not find button. Ignoring..")
                 pass
 
-            #input(f'{Fore.LIGHTMAGENTA_EX}[!]{Style.RESET_ALL} Press ENTER to create account.')
+            input(f'{Fore.LIGHTMAGENTA_EX}[!]{Style.RESET_ALL} Press ENTER to create account.')
             self.driver.find_element_by_class_name('button-3k0cO7').click() # Submit button        
             free_print(f'{Fore.LIGHTMAGENTA_EX}[*]{Style.RESET_ALL} Submit form')
 
